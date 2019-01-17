@@ -32,7 +32,8 @@ namespace BeFaster.App.Solutions.CHK
             var groupDiscountProduct = new StockItem("d", 45);
 
             var groupBasket = basket.Where(x => groupDiscountItems.Contains(x.Name));
-            groupBasket = groupBasket.OrderBy(x => x.Price);
+            //prefer to discount higher price
+            groupBasket = groupBasket.OrderByDescending(x => x.Price);
 
             //remove every three from basket and add one group
             var amomountOfGroup = groupBasket.Count() / 3;
@@ -105,7 +106,7 @@ namespace BeFaster.App.Solutions.CHK
             collection.Add(new Discount("F", 10, 3, "F"));
             collection.Add(new Discount("H", 20, 10, "H"));
             collection.Add(new Discount("H", 5, 5, "H"));
-            collection.Add(new Discount("K", 10, 2, "K"));
+            collection.Add(new Discount("K", 20, 2, "K"));
             collection.Add(new Discount("N", 15, 3, "M"));
             collection.Add(new Discount("P", 50, 5, "P"));
             collection.Add(new Discount("Q", 10, 3, "Q"));
@@ -210,9 +211,3 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
-
-
-
-
-
-
