@@ -111,6 +111,22 @@ namespace BeFaster.App.Tests.Solutions.CHK
         {
             return CheckoutSolution.Checkout(items);
         }
+
+        [TestCase("SSS", ExpectedResult = 45)]
+        [TestCase("TTT", ExpectedResult = 45)]
+        [TestCase("XXX", ExpectedResult = 45)]
+        [TestCase("YYY", ExpectedResult = 45)]
+        [TestCase("ZZZ", ExpectedResult = 45)]
+        [TestCase("XYZ", ExpectedResult = 45)]
+        [TestCase("STX", ExpectedResult = 45)]
+        [TestCase("YTZ", ExpectedResult = 45)]
+        [TestCase("STY", ExpectedResult = 45)]
+        [TestCase("STZ", ExpectedResult = 45)]
+        public int CheckoutGroupDiscount(string items)
+        {
+            return CheckoutSolution.Checkout(items);
+        }
     }
 }
+
 
