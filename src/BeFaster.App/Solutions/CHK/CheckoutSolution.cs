@@ -35,19 +35,15 @@ namespace BeFaster.App.Solutions.CHK
             groupBasket = groupBasket.OrderBy(x => x.Price);
 
             //remove every three from basket and add one group
-            int counter = 0;
-            foreach (var item in groupBasket)
-            {
-                counter++;
-                if(counter == 0)
-                {
+            var amomountOfGroup = groupBasket.Count() / 3;
+            var left = groupBasket.Count() % 3;
 
-                }
-            }
-            for (int i = 0; i < 3; i++)
+            //add group product representation to basket
+            for (int i = 0; i < amomountOfGroup; i++)
             {
-
+                basket.Add(groupDiscountProduct);
             }
+            //remove added products to basket
         }
 
         private static void RemoveFreeFromBasket(List<StockItem> basket, IEnumerable<Discount> discounts)
@@ -210,6 +206,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
