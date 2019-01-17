@@ -16,7 +16,23 @@ namespace BeFaster.App.Solutions.CHK
             var collection = new List<StockItem>(skus.Length);
             foreach (var item in skus)
             {
-                if (item.Equals("A"))
+                switch (item)
+                {
+                    case 'A':
+                        collection.Add(new StockItem("A", 50));
+                        break;
+                    case 'B':
+                        collection.Add(new StockItem("B", 30));
+                        break;
+                    case 'C':
+                        collection.Add(new StockItem("C", 20));
+                        break;
+                    case 'D':
+                        collection.Add(new StockItem("D", 15));
+                        break;
+                    default:
+                        throw new ArgumentException("Invalid input");
+                }
             }
         }
 
@@ -34,6 +50,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
