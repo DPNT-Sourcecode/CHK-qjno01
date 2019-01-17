@@ -44,8 +44,6 @@ namespace BeFaster.App.Solutions.CHK
 
         private static int CalculateDiscount(IList<StockItem> basket, IEnumerable<Discount> discounts)
         {
-
-
             int total = 0;
             //discount special
             foreach (var discount in discounts)
@@ -67,6 +65,7 @@ namespace BeFaster.App.Solutions.CHK
         private static IEnumerable<Discount> InitDiscounts()
         {
             var collection = new List<Discount>();
+            collection.Add(new Discount("A", 50, 5, "A"));
             collection.Add(new Discount("A", 20, 3, "A"));
             collection.Add(new Discount("B", 15, 2, "B"));
             collection.Add(new Discount("E", 30, 2, "B"));
@@ -104,6 +103,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
