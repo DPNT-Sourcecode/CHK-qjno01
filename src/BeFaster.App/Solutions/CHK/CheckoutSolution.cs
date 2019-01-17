@@ -130,7 +130,7 @@ namespace BeFaster.App.Solutions.CHK
                         collection.Add(new StockItem(item.ToString(), 60));
                         break;
                     case 'K':
-                        collection.Add(new StockItem(item.ToString(), 80));
+                        collection.Add(new StockItem(item.ToString(), 70));
                         break;
                     case 'L':
                         collection.Add(new StockItem(item.ToString(), 90));
@@ -154,7 +154,7 @@ namespace BeFaster.App.Solutions.CHK
                         collection.Add(new StockItem(item.ToString(), 50));
                         break;
                     case 'S':
-                        collection.Add(new StockItem(item.ToString(), 30));
+                        collection.Add(new StockItem(item.ToString(), 20));
                         break;
                     case 'T':
                         collection.Add(new StockItem(item.ToString(), 20));
@@ -185,3 +185,4 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
