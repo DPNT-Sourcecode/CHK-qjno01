@@ -43,7 +43,7 @@ namespace BeFaster.App.Solutions.CHK
 
             int total = 0;
             //discount special
-            foreach (var discount in discounts.Where(x=>x.ItemName == x.Target))
+            foreach (var discount in discounts)
             {
                 var itemCount = basket.Count(x => x.Name == discount.ItemName);
                 total += discount.DiscountSum *
@@ -94,8 +94,3 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
-
-
-
-
-
