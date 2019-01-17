@@ -35,9 +35,9 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [TestCase("U", ExpectedResult = 40)]
         [TestCase("V", ExpectedResult = 50)]
         [TestCase("W", ExpectedResult = 20)]
-        [TestCase("X", ExpectedResult = 90)]
-        [TestCase("Y", ExpectedResult = 10)]
-        [TestCase("Z", ExpectedResult = 50)]
+        [TestCase("X", ExpectedResult = 17)]
+        [TestCase("Y", ExpectedResult = 20)]
+        [TestCase("Z", ExpectedResult = 21)]
         public int CheckoutSoloItems(string items)
         {
             return CheckoutSolution.Checkout(items);
@@ -51,8 +51,8 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [TestCase("HHHHH", ExpectedResult = 45)]
         [TestCase("HHHHHHHHHH", ExpectedResult = 80)]
         [TestCase("HHHHHHHHHHHHHHH", ExpectedResult = 125)]
-        [TestCase("KK", ExpectedResult = 150)]
-        [TestCase("KKK", ExpectedResult = 150+80)]
+        [TestCase("KK", ExpectedResult = 120)]
+        [TestCase("KKK", ExpectedResult = 120+70)]
         [TestCase("PPPPP", ExpectedResult = 200)]
         [TestCase("PPPPPP", ExpectedResult = 250)]
         [TestCase("QQQ", ExpectedResult = 80)]
@@ -75,7 +75,7 @@ namespace BeFaster.App.Tests.Solutions.CHK
 
        
         [TestCase("gasjfkdlhiujghwq", ExpectedResult = -1)]
-        [TestCase("JKLSEA", ExpectedResult = -1)]
+        [TestCase("JKL32432SEA", ExpectedResult = -1)]
         [TestCase("Aa", ExpectedResult = -1)]
         [TestCase("abcd", ExpectedResult = -1)]
         public int CheckoutInvalidInput(string items)
@@ -131,3 +131,4 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
     }
 }
+
