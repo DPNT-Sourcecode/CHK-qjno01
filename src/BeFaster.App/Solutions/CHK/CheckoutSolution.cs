@@ -27,6 +27,13 @@ namespace BeFaster.App.Solutions.CHK
         {
             var discounts = InitDiscounts();
             int total = 0;
+
+            //remove free items from basket 
+            foreach(var discount in discounts.Where(x=>x.ItemName != x.Target))
+            {
+                var toRemove = basket.Count(x => x.Name == discount.ItemName) / discount.ApplyAmount;
+            }
+
             foreach (var discount in discounts)
             {
                 var itemCount = basket.Count(x => x.Name == discount.ItemName);
@@ -78,5 +85,6 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
