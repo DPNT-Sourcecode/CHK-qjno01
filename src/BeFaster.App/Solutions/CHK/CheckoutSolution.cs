@@ -46,10 +46,14 @@ namespace BeFaster.App.Solutions.CHK
             foreach (var discount in discounts)
             {
                 var itemCount = basket.Count(x => x.Name == discount.ItemName);
-                total += discount.DiscountSum *
-                    (itemCount / discount.ApplyAmount);
-
-
+                if (discount.Target != discount.ItemName)
+                {
+                    if (basket.Count(x => x.Name == discount.Target) == 0)
+                        continue;
+                }
+                else
+                    total += discount.DiscountSum *
+                   (itemCount / discount.ApplyAmount);
             }
             return total;
         }
@@ -94,3 +98,4 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
