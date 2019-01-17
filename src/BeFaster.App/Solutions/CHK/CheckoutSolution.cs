@@ -25,15 +25,16 @@ namespace BeFaster.App.Solutions.CHK
 
         private static int CalculateDiscount(IEnumerable<StockItem> basket)
         {
-            var discounts
+            var discounts = InitDiscounts();
         }
 
-        class Discount
+        private static IEnumerable<Discount> InitDiscounts()
         {
-            public string ItemName { get; set; }
-
-            public int DiscountAmount { get; set; }
+            var collection = new List<Discount>();
+            collection.Add(new Discount("A", 20, 3));
         }
+        
+
         private static IEnumerable<StockItem> InitBasket(string skus)
         {
             var collection = new List<StockItem>(skus.Length);
@@ -74,3 +75,4 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
