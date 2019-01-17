@@ -49,6 +49,11 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [TestCase("HHHHHHHHHH", ExpectedResult = 80)]
         [TestCase("HHHHHHHHHHHHHHH", ExpectedResult = 125)]
         [TestCase("KK", ExpectedResult = 150)]
+        [TestCase("KKK", ExpectedResult = 150+80)]
+        [TestCase("PPPPP", ExpectedResult = 200)]
+        [TestCase("PPPPPP", ExpectedResult = 250)]
+        [TestCase("QQQ", ExpectedResult = 80)]
+        [TestCase("QQQQ", ExpectedResult = 110)]
         [TestCase("UUUU", ExpectedResult = 120)]
         [TestCase("UUU", ExpectedResult = 120)]
         public int CheckoutSpecials(string items)
@@ -103,6 +108,7 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [TestCase("EEBB", ExpectedResult = 110)]
         [TestCase("EEBBB", ExpectedResult = 80 + 45)]
         [TestCase("EEEEBB", ExpectedResult = 160)]
+        [TestCase("RRRQ", ExpectedResult = 150)]
         public int CheckoutForFree(string items)
         {
             return CheckoutSolution.Checkout(items);
@@ -126,6 +132,7 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
     }
 }
+
 
 
 
