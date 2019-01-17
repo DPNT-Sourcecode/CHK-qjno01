@@ -93,5 +93,14 @@ namespace BeFaster.App.Tests.Solutions.CHK
         {
             return CheckoutSolution.Checkout(items);
         }
+
+        [TestCase("FFF", ExpectedResult = 20)]
+        [TestCase("FF", ExpectedResult = 20)]
+        [TestCase("FFFF", ExpectedResult = 30)]
+        public int CheckoutRewording(string items)
+        {
+            return CheckoutSolution.Checkout(items);
+        }
     }
 }
+
