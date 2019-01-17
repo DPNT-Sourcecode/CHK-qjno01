@@ -12,7 +12,7 @@ namespace BeFaster.App.Solutions.CHK
 
         public int DiscountSum { get; private set; }
 
-        public int ApplyAmount { get; private set; }
+        public int Condition { get; private set; }
 
         public string Target { get; private set; }
 
@@ -20,8 +20,9 @@ namespace BeFaster.App.Solutions.CHK
         {
             ItemName = itemName;
             DiscountSum = discountSum;
-            ApplyAmount = applyAmount;
+            Condition = applyAmount;
             Target = target;
         }
     }
 }
+

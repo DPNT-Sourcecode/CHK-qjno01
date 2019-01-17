@@ -31,7 +31,7 @@ namespace BeFaster.App.Solutions.CHK
             foreach (var discount in discounts.Where(x => x.ItemName != x.Target))
             {
                 var removeCount = basket.Count(x => x.Name == discount.ItemName) /
-                    discount.ApplyAmount;
+                    discount.Condition;
                 for (int i = 0; i < removeCount; i++)
                 {
                     var item = basket.FirstOrDefault(x => x.Name == discount.Target);
@@ -55,7 +55,9 @@ namespace BeFaster.App.Solutions.CHK
                 }
                 else
                 {
-                    total += discount.DiscountSum *  (itemCount / discount.ApplyAmount);
+                    total += discount.DiscountSum *  (itemCount / discount.Condition);
+                    //remove amount of item from basket
+                    
                 }
                  
             }
@@ -103,6 +105,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
