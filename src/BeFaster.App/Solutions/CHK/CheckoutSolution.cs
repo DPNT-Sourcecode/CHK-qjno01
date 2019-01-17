@@ -125,6 +125,48 @@ namespace BeFaster.App.Solutions.CHK
                     case 'L':
                         collection.Add(new StockItem(item.ToString(), 90));
                         break;
+                    case 'M':
+                        collection.Add(new StockItem(item.ToString(), 15));
+                        break;
+                    case 'N':
+                        collection.Add(new StockItem(item.ToString(), 40));
+                        break;
+                    case 'O':
+                        collection.Add(new StockItem(item.ToString(), 10));
+                        break;
+                    case 'P':
+                        collection.Add(new StockItem(item.ToString(), 50));
+                        break;
+                    case 'Q':
+                        collection.Add(new StockItem(item.ToString(), 30));
+                        break;
+                    case 'R':
+                        collection.Add(new StockItem(item.ToString(), 50));
+                        break;
+                    case 'S':
+                        collection.Add(new StockItem(item.ToString(), 30));
+                        break;
+                    case 'T':
+                        collection.Add(new StockItem(item.ToString(), 20));
+                        break;
+                    case 'U':
+                        collection.Add(new StockItem(item.ToString(), 40));
+                        break;
+                    case 'V':
+                        collection.Add(new StockItem(item.ToString(), 50));
+                        break;
+                    case 'W':
+                        collection.Add(new StockItem(item.ToString(), 20));
+                        break;
+                    case 'X':
+                        collection.Add(new StockItem(item.ToString(), 90));
+                        break;
+                    case 'Y':
+                        collection.Add(new StockItem(item.ToString(), 10));
+                        break;
+                    case 'Z':
+                        collection.Add(new StockItem(item.ToString(), 50));
+                        break;
                     default:
                         throw new ArgumentException("Invalid input");
                 }
@@ -133,4 +175,5 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
