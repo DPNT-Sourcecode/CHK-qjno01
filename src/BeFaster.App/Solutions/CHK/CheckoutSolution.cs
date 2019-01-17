@@ -12,7 +12,7 @@ namespace BeFaster.App.Solutions.CHK
             try
             {
                 var basket = InitBasket(skus).ToList();
-                basket = ReassembleGroupDiscounts(basket);
+                ReassembleGroupDiscounts(basket);
                 var discounts = InitDiscounts();
                 RemoveFreeFromBasket(basket, discounts);
                 var sum = basket.Sum(x => x.Price);
@@ -26,7 +26,7 @@ namespace BeFaster.App.Solutions.CHK
 
         }
 
-        private static List<StockItem> ReassembleGroupDiscounts(List<StockItem> basket)
+        private static void ReassembleGroupDiscounts(List<StockItem> basket)
         {
             var groupDiscountItems = new[] { "S", "T", "X", "Y", "Z" };
             var groupDiscountProduct = new StockItem("d", 45);
@@ -43,7 +43,11 @@ namespace BeFaster.App.Solutions.CHK
             {
                 basket.Add(groupDiscountProduct);
             }
-            //remove added products to basket
+            //remove group items from basket
+            foreach (var toRemove in groupBasket.Take(amomountOfGroup * 3))
+            {
+                basket.Remove(toRemove);
+            }
         }
 
         private static void RemoveFreeFromBasket(List<StockItem> basket, IEnumerable<Discount> discounts)
@@ -206,6 +210,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 

@@ -122,11 +122,14 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [TestCase("YTZ", ExpectedResult = 45)]
         [TestCase("STY", ExpectedResult = 45)]
         [TestCase("STZ", ExpectedResult = 45)]
+        [TestCase("XXXX", ExpectedResult = 45 + 17)]
+        [TestCase("YYYX", ExpectedResult = 45 + 17)]
         public int CheckoutGroupDiscount(string items)
         {
             return CheckoutSolution.Checkout(items);
         }
     }
 }
+
 
 
