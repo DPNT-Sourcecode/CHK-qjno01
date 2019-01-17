@@ -48,11 +48,36 @@ namespace BeFaster.App.Tests.Solutions.CHK
             return CheckoutSolution.Checkout(items);
         }
 
-        [TestCase("BB", ExpectedResult = 45)]
+        [TestCase("ABCD", ExpectedResult = 115)]
         public int CheckoutFewItems(string items)
+        {
+            return CheckoutSolution.Checkout(items);
+        }
+
+        [TestCase("AAAA", ExpectedResult = 180)]
+        public int CheckoutFourA(string items)
+        {
+            return CheckoutSolution.Checkout(items);
+        }
+
+        [TestCase("BBBB", ExpectedResult = 90)]
+        public int CheckoutTwoSpecialB(string items)
+        {
+            return CheckoutSolution.Checkout(items);
+        }
+
+        [TestCase("AAAABBBCD", ExpectedResult = 180 + 75 + 20 + 15)]
+        public int CheckoutCombos(string items)
+        {
+            return CheckoutSolution.Checkout(items);
+        }
+
+        [TestCase("AAAABBBCD", ExpectedResult = -1)]
+        public int CheckoutInvalidInput(string items)
         {
             return CheckoutSolution.Checkout(items);
         }
     }
 }
+
 
