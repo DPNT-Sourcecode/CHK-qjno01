@@ -44,7 +44,7 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
 
         [TestCase("AAA", ExpectedResult = 130)]
-        public int CheckoutThreeA(string items)
+        public int CheckoutSpecials(string items)
         {
             return CheckoutSolution.Checkout(items);
         }
@@ -125,5 +125,6 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
     }
 }
+
 
 
