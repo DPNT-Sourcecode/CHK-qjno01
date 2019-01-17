@@ -30,8 +30,24 @@ namespace BeFaster.App.Solutions.CHK
         {
             var groupDiscountItems = new[] { "S", "T", "X", "Y", "Z" };
             var groupDiscountProduct = new StockItem("d", 45);
-            var groupBasket = basket.Where(x => groupDiscountItems.Contains(x.Name));
 
+            var groupBasket = basket.Where(x => groupDiscountItems.Contains(x.Name));
+            groupBasket = groupBasket.OrderBy(x => x.Price);
+
+            //remove every three from basket and add one group
+            int counter = 0;
+            foreach (var item in groupBasket)
+            {
+                counter++;
+                if(counter == 0)
+                {
+
+                }
+            }
+            for (int i = 0; i < 3; i++)
+            {
+
+            }
         }
 
         private static void RemoveFreeFromBasket(List<StockItem> basket, IEnumerable<Discount> discounts)
@@ -194,6 +210,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
