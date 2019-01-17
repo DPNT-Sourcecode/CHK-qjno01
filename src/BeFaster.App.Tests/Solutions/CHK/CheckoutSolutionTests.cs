@@ -57,8 +57,9 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [TestCase("PPPPPP", ExpectedResult = 250)]
         [TestCase("QQQ", ExpectedResult = 80)]
         [TestCase("QQQQ", ExpectedResult = 110)]
-        [TestCase("UUUU", ExpectedResult = 120)]
-        [TestCase("UUU", ExpectedResult = 120)]
+        [TestCase("VV", ExpectedResult = 90)]
+        [TestCase("VVV", ExpectedResult = 130)]
+        [TestCase("VVVVV", ExpectedResult = 90 + 130)]
         public int CheckoutSpecials(string items)
         {
             return CheckoutSolution.Checkout(items);
@@ -112,9 +113,3 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
     }
 }
-
-
-
-
-
-
