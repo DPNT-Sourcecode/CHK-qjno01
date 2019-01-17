@@ -11,7 +11,7 @@ namespace BeFaster.App.Solutions.CHK
         {
             try
             {
-                var basket = InitBasket(skus);
+                var basket = InitBasket(skus).ToList();
                 var sum = basket.Sum(x => x.Price);
                 var discount = CalculateDiscount(basket);
                 return sum - discount;
@@ -23,20 +23,27 @@ namespace BeFaster.App.Solutions.CHK
 
         }
 
-        private static int CalculateDiscount(IEnumerable<StockItem> basket)
+        private static int CalculateDiscount(IList<StockItem> basket)
         {
             var discounts = InitDiscounts();
-            int total = 0;
 
             //remove free items from basket 
-            foreach(var discount in discounts.Where(x=>x.ItemName != x.Target))
+            foreach (var discount in discounts.Where(x => x.ItemName != x.Target))
             {
                 var removeCount = basket.Count(x => x.Name == discount.ItemName) /
                     discount.ApplyAmount;
-
+                for (int i = 0; i < removeCount; i++)
+                {
+                    var item = basket.FirstOrDefault(x => x.Name == discount.Target);
+                    if (item == null)
+                        break;
+                    basket.Remove(item);
+                }
             }
 
-            foreach (var discount in discounts)
+            int total = 0;
+            //discount special
+            foreach (var discount in discounts.Where(x=>x.ItemName == x.Target))
             {
                 var itemCount = basket.Count(x => x.Name == discount.ItemName);
                 total += discount.DiscountSum *
@@ -87,6 +94,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
