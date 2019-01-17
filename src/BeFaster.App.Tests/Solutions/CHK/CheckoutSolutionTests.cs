@@ -13,25 +13,11 @@ namespace BeFaster.App.Tests.Solutions.CHK
     public class CheckoutSolutionTests
     {
         [TestCase("A", ExpectedResult = 50)]
-        public int CheckoutTestA(string items)
-        {
-            return CheckoutSolution.Checkout(items);
-        }
-
         [TestCase("B", ExpectedResult = 30)]
-        public int CheckoutTestB(string items)
-        {
-            return CheckoutSolution.Checkout(items);
-        }
-
         [TestCase("C", ExpectedResult = 20)]
-        public int CheckoutTestC(string items)
-        {
-            return CheckoutSolution.Checkout(items);
-        }
-
         [TestCase("D", ExpectedResult = 15)]
-        public int CheckoutTestD(string items)
+        [TestCase("E", ExpectedResult = 40)]
+        public int CheckoutSoloItems(string items)
         {
             return CheckoutSolution.Checkout(items);
         }
@@ -97,7 +83,15 @@ namespace BeFaster.App.Tests.Solutions.CHK
         {
             return CheckoutSolution.Checkout(items);
         }
+
+        [TestCase("AAAAA", ExpectedResult = 200)]
+        [TestCase("AAAAAAAA", ExpectedResult = 330)]
+        public int CheckoutForFew(string items)
+        {
+            return CheckoutSolution.Checkout(items);
+        }
     }
 }
+
 
 

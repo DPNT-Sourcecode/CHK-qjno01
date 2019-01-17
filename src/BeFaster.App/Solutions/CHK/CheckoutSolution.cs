@@ -41,6 +41,7 @@ namespace BeFaster.App.Solutions.CHK
             var collection = new List<Discount>();
             collection.Add(new Discount("A", 20, 3));
             collection.Add(new Discount("B", 15, 2));
+            collection.Add(new Discount("E", 30, 2));
             return collection;
         }
 
@@ -64,6 +65,9 @@ namespace BeFaster.App.Solutions.CHK
                     case 'D':
                         collection.Add(new StockItem("D", 15));
                         break;
+                    case 'E':
+                        collection.Add(new StockItem("E", 40));
+                        break;
                     default:
                         throw new ArgumentException("Invalid input");
                 }
@@ -72,3 +76,4 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
