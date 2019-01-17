@@ -88,11 +88,16 @@ namespace BeFaster.App.Tests.Solutions.CHK
             return CheckoutSolution.Checkout(items);
         }
 
-        [TestCase("EEB", ExpectedResult = 40)]
+        [TestCase("EEB", ExpectedResult = 80)]
+        [TestCase("EE", ExpectedResult = 80)]
+        [TestCase("EEBB", ExpectedResult = 110)]
+        [TestCase("EEBBB", ExpectedResult = 80 + 45)]
+        [TestCase("EEEEBB", ExpectedResult = 160)]
         public int CheckoutForFree(string items)
         {
             return CheckoutSolution.Checkout(items);
         }
     }
 }
+
 
