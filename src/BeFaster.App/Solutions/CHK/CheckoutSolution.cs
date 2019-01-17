@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using BeFaster.Runner.Exceptions;
 
 namespace BeFaster.App.Solutions.CHK
@@ -10,9 +11,13 @@ namespace BeFaster.App.Solutions.CHK
             var basket = InitBasket(skus);
         }
 
-        private static IEquatable<StockItem> InitBasket(string skus)
+        private static IEnumerable<StockItem> InitBasket(string skus)
         {
-            throw new NotImplementedException();
+            var collection = new List<StockItem>(skus.Length);
+            foreach (var item in skus)
+            {
+                if (item.Equals("A"))
+            }
         }
 
         public class StockItem
@@ -29,5 +34,6 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
