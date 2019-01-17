@@ -29,9 +29,9 @@ namespace BeFaster.App.Solutions.CHK
             int total = 0;
             foreach (var discount in discounts)
             {
-                var items = basket.Where(x => x.Name == discount.ItemName);
+                var itemCount = basket.Count(x => x.Name == discount.ItemName);
                 total += discount.DiscountSum *
-                    (items.Count() / discount.ApplyAmount);
+                    (itemCount / discount.ApplyAmount);
             }
             return total;
         }
@@ -70,21 +70,9 @@ namespace BeFaster.App.Solutions.CHK
             }
             return collection;
         }
-
-        public class StockItem
-        {
-            public string Name { get; private set; }
-
-            public int Price { get; private set; }
-
-            public StockItem(string name, int price)
-            {
-                Name = name;
-                Price = price;
-            }
-        }
     }
 }
+
 
 
 
