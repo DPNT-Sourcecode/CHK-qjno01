@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using BeFaster.Runner.Exceptions;
 
 namespace BeFaster.App.Solutions.CHK
@@ -8,7 +9,17 @@ namespace BeFaster.App.Solutions.CHK
     {
         public static int Checkout(string skus)
         {
-            var basket = InitBasket(skus);
+            try
+            {
+                var basket = InitBasket(skus);
+
+                return basket.Sum(x => x.Price);
+            }
+            catch (ArgumentException)
+            {
+                return -1;
+            }
+
         }
 
         private static IEnumerable<StockItem> InitBasket(string skus)
@@ -34,6 +45,7 @@ namespace BeFaster.App.Solutions.CHK
                         throw new ArgumentException("Invalid input");
                 }
             }
+            return collection;
         }
 
         public class StockItem
@@ -50,6 +62,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
