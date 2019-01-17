@@ -55,11 +55,17 @@ namespace BeFaster.App.Solutions.CHK
                 }
                 else
                 {
-                    total += discount.DiscountSum *  (itemCount / discount.Condition);
+                    int discountTimes = itemCount / discount.Condition;
+                    total += discount.DiscountSum * discountTimes;
                     //remove amount of item from basket
-                    
+                    for (int i = 0; i < discountTimes * discount.Condition; i++)
+                    {
+                        var item = basket.FirstOrDefault(x => x.Name == discount.Target);
+                        if (item == null)
+                            break;
+                        basket.Remove(item);
+                    }
                 }
-                 
             }
             return total;
         }
@@ -105,6 +111,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
