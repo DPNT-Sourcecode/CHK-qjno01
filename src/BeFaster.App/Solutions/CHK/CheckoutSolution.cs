@@ -32,6 +32,8 @@ namespace BeFaster.App.Solutions.CHK
                 var itemCount = basket.Count(x => x.Name == discount.ItemName);
                 total += discount.DiscountSum *
                     (itemCount / discount.ApplyAmount);
+
+
             }
             return total;
         }
@@ -39,9 +41,9 @@ namespace BeFaster.App.Solutions.CHK
         private static IEnumerable<Discount> InitDiscounts()
         {
             var collection = new List<Discount>();
-            collection.Add(new Discount("A", 20, 3));
-            collection.Add(new Discount("B", 15, 2));
-            collection.Add(new Discount("E", 30, 2));
+            collection.Add(new Discount("A", 20, 3, "A"));
+            collection.Add(new Discount("B", 15, 2, "B"));
+            collection.Add(new Discount("E", 30, 2, "B"));
             return collection;
         }
 
@@ -76,4 +78,5 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 

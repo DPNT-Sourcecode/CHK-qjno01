@@ -14,11 +14,15 @@ namespace BeFaster.App.Solutions.CHK
 
         public int ApplyAmount { get; private set; }
 
-        public Discount(string itemName, int discountSum, int applyAmount)
+        public string Target { get; private set; }
+
+        public Discount(string itemName, int discountSum, int applyAmount, string target)
         {
             ItemName = itemName;
             DiscountSum = discountSum;
             ApplyAmount = applyAmount;
+            Target = target;
         }
     }
 }
+
