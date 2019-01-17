@@ -44,13 +44,14 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
 
         [TestCase("AAA", ExpectedResult = 130)]
-        public int CheckoutSpecials(string items)
-        {
-            return CheckoutSolution.Checkout(items);
-        }
-
         [TestCase("BB", ExpectedResult = 45)]
-        public int CheckoutTwoB(string items)
+        [TestCase("HHHHH", ExpectedResult = 45)]
+        [TestCase("HHHHHHHHHH", ExpectedResult = 80)]
+        [TestCase("HHHHHHHHHHHHHHH", ExpectedResult = 125)]
+        [TestCase("KK", ExpectedResult = 150)]
+        [TestCase("UUUU", ExpectedResult = 120)]
+        [TestCase("UUU", ExpectedResult = 120)]
+        public int CheckoutSpecials(string items)
         {
             return CheckoutSolution.Checkout(items);
         }
@@ -125,6 +126,7 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
     }
 }
+
 
 
 
