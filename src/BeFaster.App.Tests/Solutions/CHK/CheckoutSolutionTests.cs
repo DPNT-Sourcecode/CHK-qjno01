@@ -44,6 +44,9 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
 
         [TestCase("AAA", ExpectedResult = 130)]
+        [TestCase("AAAAA", ExpectedResult = 200)]
+        [TestCase("AAAAAAAA", ExpectedResult = 330)]
+        [TestCase("AAAAAAAAA", ExpectedResult = 380)]
         [TestCase("BB", ExpectedResult = 45)]
         [TestCase("HHHHH", ExpectedResult = 45)]
         [TestCase("HHHHHHHHHH", ExpectedResult = 80)]
@@ -62,23 +65,6 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
 
         [TestCase("ABCD", ExpectedResult = 115)]
-        public int CheckoutFewItems(string items)
-        {
-            return CheckoutSolution.Checkout(items);
-        }
-
-        [TestCase("AAAA", ExpectedResult = 180)]
-        public int CheckoutFourA(string items)
-        {
-            return CheckoutSolution.Checkout(items);
-        }
-
-        [TestCase("BBBB", ExpectedResult = 90)]
-        public int CheckoutTwoSpecialB(string items)
-        {
-            return CheckoutSolution.Checkout(items);
-        }
-
         [TestCase("AAAABBBCD", ExpectedResult = 180 + 75 + 20 + 15)]
         [TestCase("AAAAAAAABBEE", ExpectedResult = 130 + 200 + 30 + 80)] // (8A-130+200) (2B-30)  (2E-80)
         public int CheckoutCombos(string items)
@@ -109,15 +95,8 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [TestCase("EEBBB", ExpectedResult = 80 + 45)]
         [TestCase("EEEEBB", ExpectedResult = 160)]
         [TestCase("RRRQ", ExpectedResult = 150)]
+        [TestCase("RRRQQ", ExpectedResult = 180)]
         public int CheckoutForFree(string items)
-        {
-            return CheckoutSolution.Checkout(items);
-        }
-
-        [TestCase("AAAAA", ExpectedResult = 200)]
-        [TestCase("AAAAAAAA", ExpectedResult = 330)]
-        [TestCase("AAAAAAAAA", ExpectedResult = 380)]
-        public int CheckoutFewSpecialsForOneProduct(string items)
         {
             return CheckoutSolution.Checkout(items);
         }
@@ -126,12 +105,14 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [TestCase("FF", ExpectedResult = 20)]
         [TestCase("FFFF", ExpectedResult = 30)]
         [TestCase("FFFFF", ExpectedResult = 40)]
+        [TestCase("UUUU", ExpectedResult = 120)]
         public int CheckoutRewording(string items)
         {
             return CheckoutSolution.Checkout(items);
         }
     }
 }
+
 
 
 
