@@ -53,6 +53,7 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
 
         [TestCase("AAAABBBCD", ExpectedResult = 180 + 75 + 20 + 15)]
+        [TestCase("AAAAAAAABBEE", ExpectedResult = 130 + 200 + 30 + 80)] // (8A-130+200) (2B-30)  (2E-80)
         public int CheckoutCombos(string items)
         {
             return CheckoutSolution.Checkout(items);
@@ -94,3 +95,4 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
     }
 }
+
