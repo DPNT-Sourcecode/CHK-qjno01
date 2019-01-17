@@ -12,8 +12,9 @@ namespace BeFaster.App.Solutions.CHK
             try
             {
                 var basket = InitBasket(skus);
-
-                return basket.Sum(x => x.Price);
+                var sum = basket.Sum(x => x.Price);
+                var discount = CalculateDiscount(basket);
+                return sum - discount;
             }
             catch (ArgumentException)
             {
@@ -22,6 +23,17 @@ namespace BeFaster.App.Solutions.CHK
 
         }
 
+        private static int CalculateDiscount(IEnumerable<StockItem> basket)
+        {
+            var discounts
+        }
+
+        class Discount
+        {
+            public string ItemName { get; set; }
+
+            public int DiscountAmount { get; set; }
+        }
         private static IEnumerable<StockItem> InitBasket(string skus)
         {
             var collection = new List<StockItem>(skus.Length);
@@ -62,8 +74,3 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
-
-
-
-
-
