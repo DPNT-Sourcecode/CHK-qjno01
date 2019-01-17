@@ -72,7 +72,7 @@ namespace BeFaster.App.Tests.Solutions.CHK
             return CheckoutSolution.Checkout(items);
         }
 
-        [TestCase("", ExpectedResult = -1)]
+       
         [TestCase("gasjfkdlhiujghwq", ExpectedResult = -1)]
         [TestCase("JKLSEA", ExpectedResult = -1)]
         [TestCase("Aa", ExpectedResult = -1)]
@@ -81,8 +81,15 @@ namespace BeFaster.App.Tests.Solutions.CHK
         {
             return CheckoutSolution.Checkout(items);
         }
+
+        [TestCase("", ExpectedResult = 0)]
+        public int CheckoutEmpty(string items)
+        {
+            return CheckoutSolution.Checkout(items);
+        }
     }
 }
+
 
 
 

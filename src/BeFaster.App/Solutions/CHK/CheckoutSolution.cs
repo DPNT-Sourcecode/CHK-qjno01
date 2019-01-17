@@ -47,9 +47,6 @@ namespace BeFaster.App.Solutions.CHK
 
         private static IEnumerable<StockItem> InitBasket(string skus)
         {
-            if (string.IsNullOrEmpty(skus))
-                throw new ArgumentException();
-
             var collection = new List<StockItem>(skus.Length);
             foreach (var item in skus)
             {
@@ -75,6 +72,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
