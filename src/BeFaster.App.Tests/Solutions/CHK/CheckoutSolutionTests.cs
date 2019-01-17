@@ -25,6 +25,19 @@ namespace BeFaster.App.Tests.Solutions.CHK
         [TestCase("K", ExpectedResult = 80)]
         [TestCase("L", ExpectedResult = 90)]
         [TestCase("M", ExpectedResult = 15)]
+        [TestCase("N", ExpectedResult = 40)]
+        [TestCase("O", ExpectedResult = 10)]
+        [TestCase("P", ExpectedResult = 50)]
+        [TestCase("Q", ExpectedResult = 30)]
+        [TestCase("R", ExpectedResult = 50)]
+        [TestCase("S", ExpectedResult = 30)]
+        [TestCase("T", ExpectedResult = 20)]
+        [TestCase("U", ExpectedResult = 40)]
+        [TestCase("V", ExpectedResult = 50)]
+        [TestCase("W", ExpectedResult = 20)]
+        [TestCase("X", ExpectedResult = 90)]
+        [TestCase("Y", ExpectedResult = 10)]
+        [TestCase("Z", ExpectedResult = 50)]
         public int CheckoutSoloItems(string items)
         {
             return CheckoutSolution.Checkout(items);
@@ -112,4 +125,5 @@ namespace BeFaster.App.Tests.Solutions.CHK
         }
     }
 }
+
 
