@@ -80,6 +80,11 @@ namespace BeFaster.App.Solutions.CHK
             collection.Add(new Discount("F", 10, 3, "F"));
             collection.Add(new Discount("H", 20, 10, "H"));
             collection.Add(new Discount("H", 5, 5, "H"));
+            collection.Add(new Discount("K", 10, 2, "K"));
+            collection.Add(new Discount("N", 15, 3, "M"));
+            collection.Add(new Discount("P", 50, 5, "P"));
+            collection.Add(new Discount("Q", 10, 3, "Q"));
+            collection.Add(new Discount("R", 30, 3, "Q"));
             return collection;
         }
 
@@ -177,6 +182,7 @@ namespace BeFaster.App.Solutions.CHK
         }
     }
 }
+
 
 
 
